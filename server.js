@@ -32,15 +32,11 @@ app.post('/api/notes', (req, res) => {
 }
 );
 
-app.delete('/api/reviews/:id', (req, res) => {
+app.delete('/api/notes/:id', (req, res) => {
   const newDb = db.filter((note) => note.id !== req.params.id)
   fs.writeFileSync('./db/db.json', JSON.stringify(newDb))
-  fs.readFile('./db/db.json', (err, data) => {
-    if (err) throw err;
-    // let lessNotes = JSON.parse(data);
-    res.json(newDb)
-  })
-})
+  res.json(newDb)
+});
 
 app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/index.html'))
