@@ -53,5 +53,5 @@ app.get('*', (req, res) =>
 
 // Tells the app where to listen
 app.listen(PORT, () => {
-  console.log(`App listening at http://localhost:${PORT}`)
+  console.log(`App listening at http://localhost:${PORT}🚀`)
 });
